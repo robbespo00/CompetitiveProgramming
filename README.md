@@ -1,6 +1,12 @@
 # CompetitiveProgramming
 
-| Problem | Solutions |
+### EASY
+| Problems | Solutions |
+| --- | --- |
+| **Build Array from Permutation** | [trivial solution](https://github.com/robbespo00/CompetitiveProgramming/blob/main/build-array-from-permutation/src/main.rs)  |
+
+### HARD
+| Problems | Solutions |
 | --- | --- |
 | **Sliding Window Maxima** | [trivial solution](https://github.com/robbespo00/CompetitiveProgramming/blob/main/sliding-window-maxima/src/solution_trivial.rs) <br> [deque solution](https://github.com/robbespo00/CompetitiveProgramming/blob/main/sliding-window-maxima/src/solution_deque.rs) |
-|  |  |
+
