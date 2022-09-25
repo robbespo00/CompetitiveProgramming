@@ -1,5 +1,5 @@
 /*
-* Write a program to print all the LEADERS in the array. 
+* Write a program to print all the LEADERS in the array.
 * An element is leader if it is greater than all the elements
 * to its right side. The rightmost element is always a leader.
 *
@@ -12,21 +12,16 @@
 * OUTPUT: print all the leaders
 */
 
-
 fn main() {
-    let mut a: [i32; 6] = [1,2,3,4,8,6];
-    
+    let mut a: [i32; 6] = [1, 2, 3, 4, 8, 6];
 
-    
     let size = a.len();
-    
+
     leaders_array(size, &mut a);
 }
 
-
-fn leaders_array(size: usize, arr: &mut [i32]){
-    
-    let mut max = arr[size-1];
+fn leaders_array(size: usize, arr: &mut [i32]) {
+    let mut max = arr[size - 1];
 
     println!("Leader: {}", max);
 
