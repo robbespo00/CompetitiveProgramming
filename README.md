@@ -8,7 +8,7 @@
 ### Medium Difficulty
 | Problems| Solutions |
 | --- | --- |
-| - | - |
+| **Kadane's Algorithm** | [optimal solution](https://github.com/robbespo00/CompetitiveProgramming/blob/main/kadanes-algorithm/src/solution_optimal.rs) |
 
 ### Hard Difficulty
 | Problems | Solutions |
