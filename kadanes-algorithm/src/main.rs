@@ -11,7 +11,14 @@
 * OUTPUT: print the maximum sum of the contiguous sub-array in a separate
 * line for each test case.
 */
+#![allow(non_snake_case)]
+mod solution_optimal;
+use solution_optimal::solution_optimal;
 
 fn main() {
-    println!("Hello, world!");
+    let nums = vec![-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+    let result = solution_optimal(nums);
+    
+    println!("Result: {}", result);
 }
