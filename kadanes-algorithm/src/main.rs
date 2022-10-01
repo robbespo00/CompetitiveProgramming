@@ -13,12 +13,14 @@
 */
 #![allow(non_snake_case)]
 mod solution_optimal;
+mod solution_quadratic;
 use solution_optimal::solution_optimal;
+use solution_quadratic::solution_quadratic;
 
 fn main() {
     let nums = vec![-2, 1, -3, 4, -1, 2, 1, -5, 4];
 
-    let result = solution_optimal(nums);
+    let result = solution_quadratic(nums);
     
     println!("Result: {}", result);
 }
