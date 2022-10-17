@@ -1,6 +1,11 @@
 use std::fs;
 use std::time::Instant;
 
+/*
+* BST can be slower, read the documentation!
+* try your own binary search tree implementation
+*/
+
 use sliding_window_maximum::{
     brute_force, brute_force_idiomatic, bst, gen_random_vector, heap, linear,
 };
@@ -29,12 +34,14 @@ fn main() {
             let nums = gen_random_vector(n);
 
             // Brute force
+
             let (elapsed_times, _) = measure_elapsed_time(brute_force, &nums, k);
             let min_elapsed = *elapsed_times.iter().min().unwrap();
             let row = format!("{},{},{},{}\n", "BruteForce", n, k, min_elapsed);
             output_text.push_str(&row);
 
             // Brute force idiomatic
+            /*
             let (elapsed_times, _) = measure_elapsed_time(brute_force_idiomatic, &nums, k);
             let min_elapsed = *elapsed_times.iter().min().unwrap();
             let row = format!(
@@ -42,6 +49,7 @@ fn main() {
                 "BruteForceIdiomatic", n, k, min_elapsed
             );
             output_text.push_str(&row);
+            */
 
             // Heap
             let (elapsed_times, _) = measure_elapsed_time(heap, &nums, k);
