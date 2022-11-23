@@ -41,7 +41,7 @@ fn main() {
             output_text.push_str(&row);
 
             // Brute force idiomatic
-            /*
+            
             let (elapsed_times, _) = measure_elapsed_time(brute_force_idiomatic, &nums, k);
             let min_elapsed = *elapsed_times.iter().min().unwrap();
             let row = format!(
@@ -49,7 +49,7 @@ fn main() {
                 "BruteForceIdiomatic", n, k, min_elapsed
             );
             output_text.push_str(&row);
-            */
+            
 
             // Heap
             let (elapsed_times, _) = measure_elapsed_time(heap, &nums, k);

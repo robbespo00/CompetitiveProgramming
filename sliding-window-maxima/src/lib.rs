@@ -21,17 +21,20 @@ pub fn brute_force_idiomatic(v: &Vec<i32>, k: i32) -> Vec<i32> {
 }
 
 pub fn heap(nums: &Vec<i32>, k: i32) -> Vec<i32> {
-    let k = k as usize;
+    let k = k as usize; // it avoids errors about casting
     let n = nums.len();
     let mut heap: BinaryHeap<(i32, usize)> = BinaryHeap::new();
-    let mut answer = Vec::with_capacity(n - k + 1);
+    let mut answer = Vec::with_capacity(n - k + 1); // it stores the results.
 
     for (i, item) in nums.iter().enumerate().take(n) {
         heap.push((*item, i));
 
+        // it saves the maximum element iff it belongs to the window
         if i + 1 >= k {
             answer.push(heap.peek().unwrap().0);
         }
+
+        // it removes all the maxima elements which do not belong to the window anymore
         while !heap.is_empty() && i - heap.peek().unwrap().1 + 1 >= k {
             heap.pop();
         }
@@ -41,15 +44,17 @@ pub fn heap(nums: &Vec<i32>, k: i32) -> Vec<i32> {
 }
 
 pub fn bst(nums: &Vec<i32>, k: i32) -> Vec<i32> {
-    let k = k as usize;
+    let k = k as usize; // it avoids errors about casting
     let n = nums.len();
     let mut bst = BinarySearchTree::new();
-    let mut answer = Vec::with_capacity(n - k + 1);
+    let mut answer = Vec::with_capacity(n - k + 1); // it stores the results.
 
+    // it insert in the binary search tree the first k elements of the input
     for item in nums.iter().take(k) {
         bst.insert(*item);
     }
 
+    // at each iteration it saves the result, remove the element out of the window and insert the new element
     for i in k..n {
         answer.push(*bst.max().unwrap());
 
@@ -65,13 +70,15 @@ pub fn bst(nums: &Vec<i32>, k: i32) -> Vec<i32> {
 pub fn linear(nums: &Vec<i32>, k: i32) -> Vec<i32> {
     let mut deq = VecDeque::new(); // it stores the positions, not the values!
     let n = nums.len();
-    let mut answer = Vec::new(); // it stores the maxima.
+    let mut answer = Vec::new(); // it stores the results.
 
     for i in 0..n {
+        // it removes the elements that do not belong to the window
         while (!deq.is_empty()) && (*deq.front().unwrap() as i32) <= ((i as i32) - k) {
             deq.pop_front();
         }
 
+        // it removes the element smaller than the new element to insert in the window
         while (!deq.is_empty()) && nums[i] >= nums[*deq.back().unwrap()] {
             deq.pop_back();
         }
@@ -100,7 +107,6 @@ pub fn gen_random_vector(n: usize) -> Vec<i32> {
 mod tests {
     use super::*;
 
-    #[ignore]
     #[test]
     fn test_idiomatic_version() {
         let k = 3;
@@ -111,7 +117,6 @@ mod tests {
 
         assert_eq!(results, truth);
     }
-
 
     #[test]
     fn test_heap_version() {
@@ -134,7 +139,6 @@ mod tests {
 
         assert_eq!(results, truth);
     }
-
 
     #[test]
     fn test_linear_version() {

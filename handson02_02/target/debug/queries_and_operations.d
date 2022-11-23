@@ -1,0 +1,1 @@
+/Users/roberto/VisualStudioProjects/CompetitiveProgramming/handson02_02/target/debug/queries_and_operations: /Users/roberto/VisualStudioProjects/CompetitiveProgramming/handson02_02/src/lib.rs /Users/roberto/VisualStudioProjects/CompetitiveProgramming/handson02_02/src/main.rs
